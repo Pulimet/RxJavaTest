@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -31,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
         //fromCalable();
         //observableOnSubscribe();
         //observableOnSubscribeDisposableObserver();
+        //observableWithMap();
 
+    }
+
+    private void observableWithMap() {
         Observable<String> observable = Observable
                 .fromCallable(new Callable<String>() {
                     @Override
@@ -69,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("ZAQ", "onComplete");
             }
         });
-
-
     }
 
     private void observableOnSubscribeDisposableObserver() {
